@@ -5,6 +5,20 @@ import java.util.ArrayList;
 public class TestPermutation {
 
     @Test
+    public void testAmountOfEnglishWords(){
+        Permutation permutationChallenge = new Permutation();
+        ArrayList<String> permutationList = permutationChallenge.permute("working");
+        Dictionary dictionary = Dictionary.getInstance();
+        ArrayList<String> englishwords = new ArrayList<>();
+        for (String w: permutationList){
+            if (dictionary.isEnglishWord(w)){
+                englishwords.add(w);
+            }
+        }
+        assert  englishwords.size() == 5;
+    }
+
+    @Test
     public void testNullValue(){
         Permutation permutationChallenge = new Permutation();
         ArrayList<String> permutation= permutationChallenge.permute(null);
@@ -20,23 +34,9 @@ public class TestPermutation {
     }
 
     @Test
-    public void testAmountOfEnglishWords(){
-        Permutation permutationChallenge = new Permutation();
-        ArrayList<String> permutationList = permutationChallenge.permute("work");
-        Dictionary dictionary = Dictionary.getInstance();
-        ArrayList<String> englishwords = new ArrayList<>();
-        for (String w: permutationList){
-            if (dictionary.isEnglishWord(w)){
-                englishwords.add(w);
-            }
-        }
-        assert  englishwords.size() == 7;
-    }
-
-    @Test
     public void testEnglishWordsOnDictionary(){
         Permutation permutationChallenge = new Permutation();
-        ArrayList<String> permutationList = permutationChallenge.permute("work");
+        ArrayList<String> permutationList = permutationChallenge.permute("working");
         Dictionary dictionary = Dictionary.getInstance();
         ArrayList<String> englishwords = new ArrayList<>();
         for (String w: permutationList){

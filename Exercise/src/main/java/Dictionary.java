@@ -23,7 +23,7 @@ public final class Dictionary {
 
     private void createDictionary(){
         try {
-            File myObj = new File( "src/main/resources/english_words.txt");
+            File myObj = new File( "src/main/resources/dictionary_mock.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()){
                 String data = myReader.nextLine();

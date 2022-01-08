@@ -10,7 +10,7 @@ public class Runner {
         String word = null;
         boolean areletters = false;
         do{
-            System.out.println("Enter a word (only letters): ");
+            System.out.println("Please, enter a word to process (only letters): ");
             Scanner scanner = new Scanner(System.in);
             word = scanner.next();
             areletters = word.chars().allMatch(Character::isLetter);
@@ -18,13 +18,13 @@ public class Runner {
 
         ArrayList<String> permutationList = permutation.permute(word);
 
-        System.out.println("Searching english words...");
+        System.out.println("Searching english words in string...");
         ArrayList<String> englishWords = new ArrayList<>();
         for (String w : permutationList) {
             if (dictionary.isEnglishWord(w)){
                 englishWords.add(w);
             }
         }
-        System.out.println("English word: " + englishWords);
+        System.out.println("English words found: " + englishWords);
     }
 }

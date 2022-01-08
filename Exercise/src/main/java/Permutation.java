@@ -28,9 +28,9 @@ public class Permutation {
                 done.add(outStr);
             }
         } else{
-            for (int i= start; i <= end ; i++){
+            for (int i = start; i <= end ; i++){
                 str = swap(str, start, i);
-                anag(str, start - 1, end, len);
+                anag(str, start + 1, end, len);
                 str = swap (str,start,i);
             }
         }
